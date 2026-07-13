@@ -9,9 +9,14 @@ function Counter({ end, suffix = "", prefix = "" }: { end: number; suffix?: stri
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true });
   const [value, setValue] = useState(0);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    if (!isInView) return;
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted || !isInView) return;
     let start = 0;
     const duration = 1800;
     const step = 16;
@@ -26,11 +31,11 @@ function Counter({ end, suffix = "", prefix = "" }: { end: number; suffix?: stri
       }
     }, step);
     return () => clearInterval(timer);
-  }, [isInView, end]);
+  }, [mounted, isInView, end]);
 
   return (
     <span ref={ref}>
-      {prefix}{value}{suffix}
+      {prefix}{mounted ? value : end}{suffix}
     </span>
   );
 }

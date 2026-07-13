@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { FadeInView, StaggerContainer, staggerItem } from "@/components/animations/FadeInView";
 import { TextReveal } from "@/components/animations/TextReveal";
 import { motion } from "framer-motion";
@@ -15,6 +16,8 @@ const testimonials = [
     industry: "AI Automation",
     initials: "PG",
     color: "bg-purple-100 text-purple-700",
+    avatar: "/images/testimonials/palak.png",
+    url: undefined,
   },
   {
     id: 2,
@@ -25,6 +28,8 @@ const testimonials = [
     industry: "Web & SEO",
     initials: "VT",
     color: "bg-blue-100 text-blue-700",
+    avatar: "/images/testimonials/vaibhav.png",
+    url: "https://flowtechengineers.in",
   },
   {
     id: 3,
@@ -35,6 +40,8 @@ const testimonials = [
     industry: "Marketing",
     initials: "SJ",
     color: "bg-amber-100 text-amber-700",
+    avatar: "/images/testimonials/shrenik.png",
+    url: undefined,
   },
   {
     id: 4,
@@ -45,6 +52,8 @@ const testimonials = [
     industry: "Real Estate",
     initials: "RM",
     color: "bg-emerald-100 text-emerald-700",
+    avatar: "/images/testimonials/rajesh.png",
+    url: undefined,
   },
 ];
 
@@ -69,19 +78,47 @@ export default function Testimonials() {
             <motion.div
               key={t.id}
               variants={staggerItem}
-              className="card p-6 hover:shadow-card-hover transition-all duration-300"
+              className="card p-6 flex flex-col justify-between hover:shadow-card-hover transition-all duration-300"
             >
-              <Quote className="w-6 h-6 text-accent/30 mb-4" />
-              <blockquote
-                className="text-body text-ink-secondary leading-relaxed mb-5 italic"
-                dangerouslySetInnerHTML={{ __html: `&ldquo;${t.quote}&rdquo;` }}
-              />
-              <div className="flex items-center gap-3">
-                <div className={`w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold ${t.color}`}>
-                  {t.initials}
-                </div>
+              <div>
+                <Quote className="w-6 h-6 text-accent/30 mb-4" />
+                <blockquote
+                  className="text-body text-ink-secondary leading-relaxed mb-5 italic"
+                  dangerouslySetInnerHTML={{ __html: `&ldquo;${t.quote}&rdquo;` }}
+                />
+              </div>
+              <div className="flex items-center gap-3 mt-auto pt-2">
+                {t.avatar ? (
+                  <div className="relative w-9 h-9 rounded-full overflow-hidden border border-border flex-shrink-0">
+                    <Image
+                      src={t.avatar}
+                      alt={t.name}
+                      fill
+                      sizes="36px"
+                      className="object-cover"
+                    />
+                  </div>
+                ) : (
+                  <div className={`w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold ${t.color} flex-shrink-0`}>
+                    {t.initials}
+                  </div>
+                )}
                 <div>
-                  <div className="text-sm font-semibold text-ink">{t.name}</div>
+                  <div className="text-sm font-semibold text-ink">
+                    {t.url ? (
+                      <a
+                        href={t.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline hover:text-accent transition-colors"
+                        id={`testimonial-client-link-${t.id}`}
+                      >
+                        {t.name}
+                      </a>
+                    ) : (
+                      t.name
+                    )}
+                  </div>
                   <div className="text-xs text-ink-muted">{t.role}</div>
                 </div>
                 <span className="ml-auto tag">{t.industry}</span>

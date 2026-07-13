@@ -69,24 +69,22 @@ export default function FAQ() {
                     : <Plus className="w-4 h-4 text-ink-muted flex-shrink-0" />
                   }
                 </button>
-                <AnimatePresence initial={false}>
-                  {open === i && (
-                    <motion.div
-                      id={`faq-answer-${i}`}
-                      role="region"
-                      aria-labelledby={`faq-trigger-${i}`}
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-                      className="overflow-hidden"
-                    >
-                      <p className="px-5 pb-4 text-sm text-ink-secondary leading-relaxed border-t border-border pt-3">
-                        {faq.a}
-                      </p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                <motion.div
+                  id={`faq-answer-${i}`}
+                  role="region"
+                  aria-labelledby={`faq-trigger-${i}`}
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{
+                    height: open === i ? "auto" : 0,
+                    opacity: open === i ? 1 : 0
+                  }}
+                  transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                  className="overflow-hidden"
+                >
+                  <p className="px-5 pb-4 text-sm text-ink-secondary leading-relaxed border-t border-border pt-3">
+                    {faq.a}
+                  </p>
+                </motion.div>
               </div>
             </FadeInView>
           ))}
