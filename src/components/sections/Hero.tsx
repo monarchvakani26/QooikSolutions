@@ -118,7 +118,7 @@ export default function Hero() {
 
             {/* Sub-copy */}
             <motion.p
-              className="text-body-lg text-ink-secondary mb-10 text-balance max-w-xl"
+              className="text-body-lg text-ink-secondary mb-6 text-balance max-w-xl"
               initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.35, ease }}
@@ -128,6 +128,25 @@ export default function Hero() {
                 Everything your business needs to scale.
               </span>
             </motion.p>
+
+            {/* Core Services List */}
+            <motion.div
+              className="flex flex-wrap gap-x-3 gap-y-2 mb-8"
+              initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.42 }}
+            >
+              {[
+                "Custom Website Design",
+                "AI Automation & Receptionists",
+                "SEO & Digital Marketing",
+              ].map((service) => (
+                <span key={service} className="flex items-center gap-1.5 bg-surface-2 px-3 py-1.5 rounded-full border border-border text-xs font-medium text-ink">
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent inline-block" />
+                  {service}
+                </span>
+              ))}
+            </motion.div>
 
             {/* CTA row — one solid button + one text link */}
             <motion.div
@@ -167,9 +186,10 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.75 }}
             >
               {[
-                "50+ Projects Delivered",
-                "20+ Businesses Automated",
+                "5 Projects Delivered",
+                "2 AI Automations",
                 "99% Client Satisfaction",
+                "Qooik Reply (< 2hr)",
               ].map((item) => (
                 <span key={item} className="flex items-center gap-2 text-xs text-ink-muted">
                   <span className="w-1 h-1 rounded-full bg-accent inline-block" />

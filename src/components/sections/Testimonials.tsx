@@ -9,42 +9,42 @@ const testimonials = [
   {
     id: 1,
     quote:
-      "Qooik delivered our cafe website in under 3 weeks and it's already bringing in table bookings every day. The WhatsApp bot they set up handles half our enquiries automatically.",
-    name: "Rahul Mehta",
-    role: "Owner, Hotpsy Cafe",
-    industry: "Cafe",
-    initials: "RM",
-    color: "bg-amber-100 text-amber-700",
+      "Qooik built an <strong>AI automation system</strong> that automatically handles our customer enquiries and schedules follow-ups. It <strong>saved us 15+ hours every week</strong> and made sure we <strong>never miss a hot lead</strong>.",
+    name: "Palak Gada",
+    role: "Founder, Window World",
+    industry: "AI Automation",
+    initials: "PG",
+    color: "bg-purple-100 text-purple-700",
   },
   {
     id: 2,
     quote:
-      "Our engineering website now shows up on Google for the right keywords and we're getting enquiry calls we never used to get. Worth every rupee.",
-    name: "Priya Sharma",
-    role: "Director, Flow Tech Engineers",
-    industry: "Engineering",
-    initials: "PS",
+      "Our new <strong>engineering company website is stunning</strong> and completely optimized for SEO. We are now <strong>ranking on Google search</strong> for our core keywords, bringing in <strong>high-quality B2B sales enquiries</strong> organically.",
+    name: "Vaibhav Teredesai",
+    role: "Founder, Flow Tech Engineers",
+    industry: "Web & SEO",
+    initials: "VT",
     color: "bg-blue-100 text-blue-700",
   },
   {
     id: 3,
     quote:
-      "The AI automation system they built books appointments for our clinic without any staff involvement. It's changed how we manage our schedule completely.",
-    name: "Dr. Anand Kulkarni",
-    role: "Founder, Sabka Dentist",
-    industry: "Healthcare",
-    initials: "AK",
-    color: "bg-teal-100 text-teal-700",
+      "The team at Qooik created a <strong>high-converting landing page</strong> and managed our paid search campaigns. Our <strong>cost-per-lead dropped by 45%</strong> and the quality of inbound calls has <strong>improved significantly</strong>.",
+    name: "Shrenik Jain",
+    role: "Founder, Shrenik Jain Digital",
+    industry: "Marketing",
+    initials: "SJ",
+    color: "bg-amber-100 text-amber-700",
   },
   {
     id: 4,
     quote:
-      "We went from zero online presence to 200+ website visitors a week and online orders within a month of launching with Qooik.",
-    name: "Vikram Patel",
-    role: "Co-founder, Wokster Chinese Corner",
-    industry: "Restaurant",
-    initials: "VP",
-    color: "bg-red-100 text-red-700",
+      "We deployed Qooik's <strong>AI Voice Receptionist</strong> to handle after-hours calls. It <strong>answers client questions 24/7</strong>, books property site-visits, and logs lead details directly into our CRM. Truly a <strong>game-changer for real estate</strong>.",
+    name: "Rajesh Mehta",
+    role: "Founder, Mehta Realty",
+    industry: "Real Estate",
+    initials: "RM",
+    color: "bg-emerald-100 text-emerald-700",
   },
 ];
 
@@ -72,9 +72,10 @@ export default function Testimonials() {
               className="card p-6 hover:shadow-card-hover transition-all duration-300"
             >
               <Quote className="w-6 h-6 text-accent/30 mb-4" />
-              <blockquote className="text-body text-ink-secondary leading-relaxed mb-5 italic">
-                "{t.quote}"
-              </blockquote>
+              <blockquote
+                className="text-body text-ink-secondary leading-relaxed mb-5 italic"
+                dangerouslySetInnerHTML={{ __html: `&ldquo;${t.quote}&rdquo;` }}
+              />
               <div className="flex items-center gap-3">
                 <div className={`w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold ${t.color}`}>
                   {t.initials}

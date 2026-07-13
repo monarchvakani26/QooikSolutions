@@ -29,7 +29,7 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://qooiksolutions.com",
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "qooiksolutions@gmail.com",
   phone: process.env.NEXT_PUBLIC_CONTACT_PHONE ?? "+91 89282 44779",
-  whatsapp: process.env.NEXT_PUBLIC_WA_NUMBER ?? "918928244779",
+  whatsapp: `https://wa.me/${process.env.NEXT_PUBLIC_WA_NUMBER ?? "918928244779"}`,
   social: {
     twitter: process.env.NEXT_PUBLIC_TWITTER_URL ?? "https://x.com/QooikSolutions",
     instagram:

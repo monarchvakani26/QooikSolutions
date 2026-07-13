@@ -50,7 +50,7 @@ export default function BlogPage() {
           <TextReveal
             text="Learn. Grow. Compete."
             as="h1"
-            className="text-display font-heading font-bold text-ink mb-4 max-w-2xl mx-auto"
+            className="text-display font-sans font-bold text-ink mb-4 max-w-2xl mx-auto"
           />
           <FadeInView delay={0.2}>
             <p className="text-body-lg text-ink-secondary max-w-xl mx-auto">
@@ -87,7 +87,7 @@ export default function BlogPage() {
                     </span>
                   </div>
 
-                  <h2 className="text-lg font-heading font-bold text-ink mb-2 group-hover:text-accent transition-colors duration-200 leading-snug flex-1">
+                  <h2 className="text-lg font-sans font-bold text-ink mb-2 group-hover:text-accent transition-colors duration-200 leading-snug flex-1">
                     <Link href={`/blog/${post.slug}`} className="hover:no-underline">
                       {post.title}
                     </Link>
@@ -122,7 +122,7 @@ export default function BlogPage() {
         <div className="section-container text-center">
           <FadeInView>
             <div className="card max-w-xl mx-auto p-8">
-              <h2 className="text-h2 font-heading font-bold text-ink mb-3">
+              <h2 className="text-h2 font-sans font-bold text-ink mb-3">
                 Want to grow your business?
               </h2>
               <p className="text-ink-secondary text-sm mb-6 max-w-sm mx-auto">

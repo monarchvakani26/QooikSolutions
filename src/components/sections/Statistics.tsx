@@ -36,10 +36,10 @@ function Counter({ end, suffix = "", prefix = "" }: { end: number; suffix?: stri
 }
 
 const stats = [
-  { value: 50, suffix: "+", label: "Projects Delivered", sublabel: "Across 10+ industries" },
-  { value: 20, suffix: "+", label: "Businesses Automated", sublabel: "WhatsApp & AI workflows" },
-  { value: 99, suffix: "%", label: "Client Satisfaction", sublabel: "Rated by our clients" },
-  { value: 48, suffix: "h", label: "Average Turnaround", sublabel: "For initial proposal" },
+  { value: 5, suffix: "", label: "Projects Delivered", sublabel: "Premium hand-crafted websites" },
+  { value: 2, suffix: "", label: "AI Automations", sublabel: "WhatsApp & chatbot workflows" },
+  { value: 99, suffix: "%", label: "Client Satisfaction", sublabel: "Rated 5-star across all work" },
+  { value: 2, suffix: "h", prefix: "< ", label: "Qooik Reply Time", sublabel: "Average response speed" },
 ];
 
 export default function Statistics() {
@@ -60,7 +60,7 @@ export default function Statistics() {
             <FadeInView key={stat.label} delay={i * 0.08}>
               <div className="card p-6 text-center hover:shadow-card-hover transition-all duration-300">
                 <div className="text-4xl lg:text-5xl font-heading font-bold text-accent tabular-nums mb-1">
-                  <Counter end={stat.value} suffix={stat.suffix} />
+                  <Counter end={stat.value} suffix={stat.suffix} prefix={stat.prefix} />
                 </div>
                 <div className="font-semibold text-ink text-sm mb-1">{stat.label}</div>
                 <div className="text-xs text-ink-muted">{stat.sublabel}</div>

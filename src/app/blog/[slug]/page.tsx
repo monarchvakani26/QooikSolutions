@@ -183,7 +183,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
                 {formatDate(post.date)}
               </span>
             </div>
-            <h1 className="text-display-sm font-heading font-bold text-ink mb-4">{post.title}</h1>
+            <h1 className="text-display-sm font-sans font-bold text-ink mb-4">{post.title}</h1>
             <p className="text-body-lg text-ink-secondary leading-relaxed">{post.description}</p>
           </FadeInView>
         </div>
@@ -194,8 +194,8 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
         <div className="section-container max-w-3xl">
           <FadeInView delay={0.1}>
             <article
-              className="prose prose-sm sm:prose-base max-w-none
-                prose-headings:font-heading prose-headings:text-ink prose-headings:font-bold
+              className="prose prose-sans prose-sm sm:prose-base max-w-none font-sans
+                prose-headings:font-sans prose-headings:text-ink prose-headings:font-bold
                 prose-p:text-ink-secondary prose-p:leading-relaxed
                 prose-strong:text-ink
                 prose-a:text-accent prose-a:no-underline hover:prose-a:underline
