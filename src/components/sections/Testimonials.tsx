@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { FadeInView, StaggerContainer, staggerItem } from "@/components/animations/FadeInView";
 import { TextReveal } from "@/components/animations/TextReveal";
 import { motion } from "framer-motion";
@@ -16,7 +15,6 @@ const testimonials = [
     industry: "AI Automation",
     initials: "PG",
     color: "bg-purple-100 text-purple-700",
-    avatar: "/images/testimonials/palak.png",
     url: undefined,
   },
   {
@@ -28,7 +26,6 @@ const testimonials = [
     industry: "Web & SEO",
     initials: "VT",
     color: "bg-blue-100 text-blue-700",
-    avatar: "/images/testimonials/vaibhav.png",
     url: "https://flowtechengineers.in",
   },
   {
@@ -40,7 +37,6 @@ const testimonials = [
     industry: "Marketing",
     initials: "SJ",
     color: "bg-amber-100 text-amber-700",
-    avatar: "/images/testimonials/shrenik.png",
     url: undefined,
   },
   {
@@ -52,7 +48,6 @@ const testimonials = [
     industry: "Real Estate",
     initials: "RM",
     color: "bg-emerald-100 text-emerald-700",
-    avatar: "/images/testimonials/rajesh.png",
     url: undefined,
   },
 ];
@@ -88,21 +83,9 @@ export default function Testimonials() {
                 />
               </div>
               <div className="flex items-center gap-3 mt-auto pt-2">
-                {t.avatar ? (
-                  <div className="relative w-9 h-9 rounded-full overflow-hidden border border-border flex-shrink-0">
-                    <Image
-                      src={t.avatar}
-                      alt={t.name}
-                      fill
-                      sizes="36px"
-                      className="object-cover"
-                    />
-                  </div>
-                ) : (
-                  <div className={`w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold ${t.color} flex-shrink-0`}>
-                    {t.initials}
-                  </div>
-                )}
+                <div className={`w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold ${t.color} flex-shrink-0`}>
+                  {t.initials}
+                </div>
                 <div>
                   <div className="text-sm font-semibold text-ink">
                     {t.url ? (
