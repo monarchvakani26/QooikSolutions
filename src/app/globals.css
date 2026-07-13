@@ -1,0 +1,244 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================================
+   CSS Custom Properties
+   ========================================================= */
+:root {
+  --cursor-size: 10px;
+  --nav-height: 72px;
+}
+
+/* =========================================================
+   Base Resets & Overrides
+   ========================================================= */
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    cursor: none; /* Replaced by custom cursor on desktop */
+    color-scheme: light;
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    html {
+      cursor: auto;
+    }
+  }
+
+  body {
+    background-color: #FAFAF8;
+    color: #0F1115;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  :focus-visible {
+    outline: 2px solid #2554FF;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Light-mode scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F4F4F1;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(15,17,21,0.18);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(15,17,21,0.28);
+  }
+}
+
+/* =========================================================
+   Component Layer
+   ========================================================= */
+@layer components {
+  /* --- Cards --- */
+  /* Standard card: white surface, 1px border, soft shadow */
+  .card {
+    @apply bg-surface border border-border rounded-2xl shadow-card;
+  }
+
+  .card-hover {
+    @apply card hover:shadow-card-hover hover:border-border-mid transition-all duration-300;
+  }
+
+  /* Elevated card for feature highlights */
+  .card-elevated {
+    @apply bg-surface border border-border rounded-2xl shadow-card-md;
+  }
+
+  /* --- Section helpers --- */
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-20 lg:py-28;
+  }
+
+  /* --- Eyebrow / label --- */
+  /* Monospace tracked text — no pill shape, no icon */
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-[0.18em] text-ink-muted;
+  }
+
+  /* --- Buttons --- */
+  /* Primary: solid accent blue, white text */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-white text-base
+           bg-accent hover:bg-accent-hover transition-all duration-200
+           shadow-btn-accent hover:shadow-card-md;
+  }
+
+  /* Secondary: text-only with arrow — never a bordered pill */
+  .btn-text-link {
+    @apply inline-flex items-center gap-1.5 text-base font-medium text-ink-secondary
+           hover:text-ink transition-colors duration-200;
+  }
+
+  /* --- Accent underline stroke --- */
+  /* Thin gradient underline beneath one specific hero word */
+  .underline-accent {
+    position: relative;
+    display: inline-block;
+  }
+  .underline-accent::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -4px;
+    height: 3px;
+    border-radius: 2px;
+    background: linear-gradient(135deg, #2554FF, #7C3AED);
+  }
+
+  /* --- Pricing card gradient border (most popular) --- */
+  .pricing-popular-border {
+    position: relative;
+    border: none;
+  }
+  .pricing-popular-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1.5px;
+    background: linear-gradient(135deg, #2554FF, #7C3AED);
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* --- Stats number --- */
+  .stat-number {
+    @apply font-heading font-bold text-accent;
+  }
+
+  /* --- Tag / badge pill (small content tag, NOT eyebrow) --- */
+  .tag {
+    @apply inline-block px-2.5 py-0.5 rounded-full text-xs font-medium
+           bg-accent-soft text-accent border border-accent/20;
+  }
+
+  /* --- Divider --- */
+  .divider {
+    @apply border-t border-border;
+  }
+}
+
+/* =========================================================
+   Utility Layer
+   ========================================================= */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Float rotation helpers for the portfolio collage */
+  .rotate-float-1 { --float-rotate: -3deg; }
+  .rotate-float-2 { --float-rotate: 2.5deg; }
+  .rotate-float-3 { --float-rotate: -1.5deg; }
+  .rotate-float-4 { --float-rotate: 1deg; }
+}
+
+/* =========================================================
+   Marquee / infinite scroll track
+   ========================================================= */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.marquee-track-slow {
+  animation-duration: 50s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track,
+  .marquee-track-slow {
+    animation: none;
+  }
+}
+
+/* =========================================================
+   Hero collage float animation override
+   ========================================================= */
+@keyframes float-card {
+  0%, 100% { transform: var(--card-rotate) translateY(0px); }
+  50%       { transform: var(--card-rotate) translateY(-8px); }
+}
+
+.collage-card-float {
+  animation: float-card 5s ease-in-out infinite;
+}
