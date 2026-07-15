@@ -13,6 +13,17 @@ export const metadata: Metadata = {
 
 const projects = [
   {
+    id: "moodita",
+    title: "Moodita",
+    description: "Premium digital portfolio and creative hub built for Niomi Gada — advocate, artist, and writer. Features an interactive creative art gallery, long-form journals, recipes, and a custom e-commerce shop interface.",
+    url: "https://moodita.in",
+    industry: "Art & E-commerce",
+    tags: ["Digital Portfolio", "E-commerce Shop", "Creative Hub"],
+    screenshot: "/images/portfolio/moodita.png",
+    bgClass: "bg-orange-50/50",
+    highlights: ["Interactive Art Gallery", "Integrated Print Shop", "Food & Travel Notebooks", "SEO Structured Schema"],
+  },
+  {
     id: "flowtech",
     title: "Flow Tech Engineers",
     description: "Industrial instrumentation company website showcasing their products, technical services, and expertise. Built for lead generation and professional credibility.",

@@ -9,6 +9,16 @@ import { motion } from "framer-motion";
 
 const portfolioItems = [
   {
+    id: "moodita",
+    title: "Moodita",
+    description:
+      "A premium, immersive digital portfolio and creative e-commerce art shop built for Niomi Gada (advocate, artist, and creator), featuring custom art print purchases, recipe guides, and journal publishing.",
+    url: "https://moodita.in",
+    industry: "Art & E-commerce",
+    tags: ["Digital Portfolio", "E-commerce Shop", "Creative Hub"],
+    screenshot: "/images/portfolio/moodita.png",
+  },
+  {
     id: "flowtech",
     title: "Flow Tech Engineers",
     description:
