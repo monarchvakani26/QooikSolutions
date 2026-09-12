@@ -4,10 +4,22 @@ import { FadeInView, StaggerContainer, staggerItem } from "@/components/animatio
 import { TextReveal } from "@/components/animations/TextReveal";
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const testimonials = [
   {
     id: 1,
+    quote:
+      "We absolutely loved the website! It turned out <strong>really beautiful and professional</strong>, exactly the way we wanted. Really happy with the work and the overall experience. <strong>Thank you so much! 🤍✨</strong>",
+    name: "Esha Patel",
+    role: "Founder, Prishcious Nails & Academy",
+    industry: "Beauty & Salon",
+    initials: "EP",
+    color: "bg-rose-100 text-rose-700",
+    url: "https://www.prishciousnails.com",
+  },
+  {
+    id: 2,
     quote:
       "Qooik built an <strong>AI automation system</strong> that automatically handles our customer enquiries and schedules follow-ups. It <strong>saved us 15+ hours every week</strong> and made sure we <strong>never miss a hot lead</strong>.",
     name: "Palak Gada",
@@ -18,7 +30,7 @@ const testimonials = [
     url: undefined,
   },
   {
-    id: 2,
+    id: 3,
     quote:
       "Our new <strong>engineering company website is stunning</strong> and completely optimized for SEO. We are now <strong>ranking on Google search</strong> for our core keywords, bringing in <strong>high-quality B2B sales enquiries</strong> organically.",
     name: "Vaibhav Teredesai",
@@ -29,7 +41,7 @@ const testimonials = [
     url: "https://flowtechengineers.in",
   },
   {
-    id: 3,
+    id: 4,
     quote:
       "The team at Qooik created a <strong>high-converting landing page</strong> and managed our paid search campaigns. Our <strong>cost-per-lead dropped by 45%</strong> and the quality of inbound calls has <strong>improved significantly</strong>.",
     name: "Shrenik Jain",
@@ -40,7 +52,7 @@ const testimonials = [
     url: undefined,
   },
   {
-    id: 4,
+    id: 5,
     quote:
       "We deployed Qooik's <strong>AI Voice Receptionist</strong> to handle after-hours calls. It <strong>answers client questions 24/7</strong>, books property site-visits, and logs lead details directly into our CRM. Truly a <strong>game-changer for real estate</strong>.",
     name: "Rajesh Mehta",
@@ -69,11 +81,14 @@ export default function Testimonials() {
         </FadeInView>
 
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-5" staggerDelay={0.1}>
-          {testimonials.map((t) => (
+          {testimonials.map((t, idx) => (
             <motion.div
               key={t.id}
               variants={staggerItem}
-              className="card p-6 flex flex-col justify-between hover:shadow-card-hover transition-all duration-300"
+              className={cn(
+                "card p-6 flex flex-col justify-between hover:shadow-card-hover transition-all duration-300",
+                idx === 0 && "md:col-span-2 bg-gradient-to-br from-surface to-accent-soft/20 border-accent/20"
+              )}
             >
               <div>
                 <Quote className="w-6 h-6 text-accent/30 mb-4" />

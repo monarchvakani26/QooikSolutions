@@ -115,11 +115,11 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Founders Section */}
+      {/* Founder Section */}
       <section className="section-padding bg-surface">
         <div className="section-container">
           <FadeInView className="text-center mb-12">
-            <p className="eyebrow mb-3">The Founders</p>
+            <p className="eyebrow mb-3">The Founder</p>
             <TextReveal
               text="Behind Qooik Solutions"
               as="h2"
@@ -127,29 +127,16 @@ export default function AboutPage() {
             />
           </FadeInView>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <FadeInView className="card p-8 flex flex-col justify-between hover:shadow-card-hover transition-all duration-300">
+          <div className="max-w-xl mx-auto">
+            <FadeInView className="card p-8 sm:p-10 flex flex-col justify-between hover:shadow-card-hover transition-all duration-300">
               <div>
-                <div className="w-12 h-12 rounded-full bg-accent-soft flex items-center justify-center text-accent font-heading font-bold text-lg mb-5">
+                <div className="w-14 h-14 rounded-full bg-accent-soft flex items-center justify-center text-accent font-heading font-bold text-xl mb-5">
                   MV
                 </div>
-                <h3 className="text-xl font-heading font-bold text-ink mb-1">Monarch Vakani</h3>
-                <p className="text-xs font-mono text-accent uppercase tracking-wider mb-4">Co-Founder & Tech Director</p>
+                <h3 className="text-2xl font-heading font-bold text-ink mb-1">Monarch Vakani</h3>
+                <p className="text-xs font-mono text-accent uppercase tracking-wider mb-4">Founder & Technical Lead</p>
                 <p className="text-sm text-ink-secondary leading-relaxed">
-                  Passionate about crafting pixel-perfect, high-performance web experiences and designing reliable backend architectures. Monarch leads the engineering and system automation workflows at Qooik.
-                </p>
-              </div>
-            </FadeInView>
-
-            <FadeInView delay={0.1} className="card p-8 flex flex-col justify-between hover:shadow-card-hover transition-all duration-300">
-              <div>
-                <div className="w-12 h-12 rounded-full bg-accent-soft flex items-center justify-center text-accent font-heading font-bold text-lg mb-5">
-                  DB
-                </div>
-                <h3 className="text-xl font-heading font-bold text-ink mb-1">Daksh Bohra</h3>
-                <p className="text-xs font-mono text-accent uppercase tracking-wider mb-4">Co-Founder & Business Lead</p>
-                <p className="text-sm text-ink-secondary leading-relaxed">
-                  Focused on business strategy, digital marketing, and client success. Daksh partners with local business owners to design growth plans, optimize sales funnels, and deploy smart AI receptionists.
+                  Passionate about crafting pixel-perfect, high-performance web experiences and designing reliable backend architectures. Monarch leads the engineering, development, and system automation workflows at Qooik.
                 </p>
               </div>
             </FadeInView>

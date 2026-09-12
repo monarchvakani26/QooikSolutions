@@ -8,10 +8,25 @@ import { TextReveal } from "@/components/animations/TextReveal";
 export const metadata: Metadata = {
   title: "Portfolio",
   description:
-    "View Qooik Solutions' portfolio of premium websites built for Indian restaurants, cafes, dental clinics, and engineering companies.",
+    "View Qooik Solutions' portfolio of premium websites built for Indian salons, creative studios, restaurants, cafes, clinics, and engineering companies.",
 };
 
 const projects = [
+  {
+    id: "prishcious",
+    title: "Prishcious Nails & Academy",
+    description: "Premium editorial nail salon and academy website featuring a complete online booking system, seamless WhatsApp and Google Calendar integration, and a dedicated training academy portal.",
+    url: "https://www.prishciousnails.com",
+    industry: "Nail Salon & Academy",
+    tags: ["Nail Salon", "Booking System", "Admin Dashboard"],
+    screenshot: "/images/portfolio/prishcious.png",
+    bgClass: "bg-rose-50/50",
+    highlights: ["Interactive Booking Engine", "WhatsApp & Calendar Sync", "Academy Training Portal", "Custom Admin Dashboard"],
+    review: {
+      quote: "We absolutely loved the website! It turned out really beautiful and professional, exactly the way we wanted. Really happy with the work and the overall experience. Thank you so much! 🤍✨",
+      client: "Esha Patel, Founder",
+    },
+  },
   {
     id: "moodita",
     title: "Moodita",
@@ -33,6 +48,17 @@ const projects = [
     screenshot: "/images/portfolio/flowtech.png",
     bgClass: "bg-blue-50/50",
     highlights: ["SEO-optimized", "Product catalog", "Lead capture forms", "Mobile-first design"],
+  },
+  {
+    id: "tropical-salon",
+    title: "Tropical Salon",
+    description: "Atmospheric, luxury unisex salon and spa website featuring cinematic visual storytelling, interactive service menus, seamless appointment booking, and a lush botanical aesthetic.",
+    url: "https://tropical-salon.vercel.app",
+    industry: "Salon & Spa",
+    tags: ["Unisex Salon", "Service Catalog", "Appointment Booking"],
+    screenshot: "/images/portfolio/tropicalsalon.png",
+    bgClass: "bg-emerald-50/50",
+    highlights: ["Cinematic Visual Showcase", "Interactive Service Menu", "Online Appointment Booking", "Mobile-First Luxury Design"],
   },
   {
     id: "hotpsy",
@@ -163,6 +189,12 @@ export default function PortfolioPage() {
                             ))}
                           </ul>
                         </div>
+                        {project.review && (
+                          <div className="mb-5 p-3.5 rounded-xl bg-accent-soft/30 border border-accent/15 text-xs text-ink-secondary">
+                            <p className="italic mb-1.5 leading-relaxed">&ldquo;{project.review.quote}&rdquo;</p>
+                            <span className="text-[11px] font-semibold text-ink not-italic">— {project.review.client}</span>
+                          </div>
+                        )}
                         <div className="flex flex-wrap gap-1.5">
                           {project.tags.map((tag) => (
                             <span key={tag} className="px-2.5 py-0.5 rounded-full bg-surface-2 text-[10px] text-ink-muted border border-border">

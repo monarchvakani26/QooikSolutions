@@ -9,6 +9,16 @@ import { motion } from "framer-motion";
 
 const portfolioItems = [
   {
+    id: "prishcious",
+    title: "Prishcious Nails & Academy",
+    description:
+      "Editorial, high-touch nail salon and academy website featuring a complete online booking system, WhatsApp and Google Calendar integration, and a dedicated training academy section.",
+    url: "https://www.prishciousnails.com",
+    industry: "Nail Salon & Academy",
+    tags: ["Nail Salon", "Booking System", "Admin Dashboard"],
+    screenshot: "/images/portfolio/prishcious.png",
+  },
+  {
     id: "moodita",
     title: "Moodita",
     description:
@@ -27,6 +37,16 @@ const portfolioItems = [
     industry: "Engineering",
     tags: ["Business Website", "Lead Generation"],
     screenshot: "/images/portfolio/flowtech.png",
+  },
+  {
+    id: "tropical-salon",
+    title: "Tropical Salon",
+    description:
+      "Lush, cinematic unisex salon and spa website featuring immersive visual storytelling, interactive service menus, and appointment booking.",
+    url: "https://tropical-salon.vercel.app",
+    industry: "Salon & Spa",
+    tags: ["Salon & Spa", "Service Menu", "Online Booking"],
+    screenshot: "/images/portfolio/tropicalsalon.png",
   },
   {
     id: "hotpsy",
